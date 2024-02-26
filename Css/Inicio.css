@@ -7,4 +7,50 @@
 #carouselExampleFade {
   width: 100%;
   max-width: 920px !important;
-};
+}
+
+.info2 {
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  font-size: 40px;
+  color: #000000;
+}
+
+.cont3{
+  margin: 5px;
+}
+
+.texto11{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 5px;
+}
+
+.texto22{
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  margin: 5px;
+}
+
+.imagen{
+  width: 65%;
+}
+
+.cosaamarilla{
+  padding-left: 5%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-right: 5%;
+  border: 1px solid #E2E2E2;
+  border-radius: 1.25rem;
+  background-color: rgb(230, 241, 74);
+  
+}
+a {
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Mantiene el color original del texto */
+}
