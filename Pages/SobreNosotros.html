@@ -12,6 +12,7 @@
     <title>Sobre Nosotros</title>
     <link rel="icon" type="image/x-icon" href="../Img/logo.jpg">
     <link rel="stylesheet" href="../Css/barra.css">
+    <link rel="stylesheet" href="../Css/about.css">
 </head>
 
 <body>
@@ -75,7 +76,7 @@
             <div class="info-usuario">
                 <div class="nombre-email">
                     <span class="nombre">Rodrigo Hurtado</span>
-                    <span class="email">20230159@gmail.com</span>
+                    <span class="email">20220224@gmail.com</span>
                 </div>
                 <ion-icon name="ellipsis-vertical-outline"></ion-icon>
             </div>
@@ -86,11 +87,35 @@
 
 
     <main>
-
+        <div id="espacios">
+            <h3>Nuestra historia</h3>
+        </div>
+        <div id="im">
+            <img src="../Img/restaurant.png" width="950" height="500">
+        </div>
+        <div class="textos" id="cambio">
+        </div>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="Js/script.js"></script>
 </body>
+<script>
+    var fechas = ['1989 - Los Inicios\nEn 1989, en el corazón de la bulliciosa ciudad, dos amigos apasionados por la gastronomía, Martín y Elena, decidieron dar vida a su sueño: abrir un restaurante que celebrara la rica tradición culinaria de la región. Con determinación y entusiasmo, encontraron el lugar perfecto y comenzaron a trabajar en la creación de su menú único y distintivo.', '1990-1999 - Los Primeros Pasos \nDurante la década de 1990, "La Cazuela" se convirtió en un punto de referencia en la escena gastronómica local. Con su enfoque en ingredientes frescos y recetas caseras, el restaurante atrajo a una creciente base de clientes que buscaban una experiencia culinaria auténtica y reconfortante. Martín y Elena se esforzaron por mantener la calidad y la consistencia en cada plato, ganándose la lealtad de sus comensales.'];
+    var indice = 0;
+    var currentIndex = 0;
 
+    function cambiarTexto() {
+        currentIndex = (currentIndex + 1) % fechas.length; // Avanza al siguiente índice (circular)
+        document.getElementById("cambio").innerText = fechas[currentIndex]; // Actualiza el texto
+    }
+
+    // Llama a la función cambiarTexto() al cargar la página
+    window.onload = function() {
+        cambiarTexto();
+    };
+
+    // Agrega un event listener para cambiar el texto al hacer clic en el div
+    document.getElementById("cambio").addEventListener("click", cambiarTexto);
+</script>
 </html>
