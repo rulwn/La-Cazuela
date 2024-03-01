@@ -93,10 +93,23 @@
         <div id="im">
             <img src="../Img/restaurant.png" width="950" height="500">
         </div>
+        <div class="textos" id="cambio" onclick="cambiarTexto()">
+            <p>1989 - Los Inicios
+                En 1989, en el corazón de la bulliciosa ciudad, dos amigos apasionados por la gastronomía, Martín y Elena, decidieron dar vida a su sueño: abrir un restaurante que celebrara la rica tradición culinaria de la región. Con determinación y entusiasmo, encontraron el lugar perfecto y comenzaron a trabajar en la creación de su menú único y distintivo.</p>
+        </div>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="Js/script.js"></script>
 </body>
+<script>
+    var fechas = ['1989 - Los Inicios\nEn 1989, en el corazón de la bulliciosa ciudad, dos amigos apasionados por la gastronomía, Martín y Elena, decidieron dar vida a su sueño: abrir un restaurante que celebrara la rica tradición culinaria de la región. Con determinación y entusiasmo, encontraron el lugar perfecto y comenzaron a trabajar en la creación de su menú único y distintivo.', '1990-1999 - Los Primeros Pasos \nDurante la década de 1990, "La Cazuela" se convirtió en un punto de referencia en la escena gastronómica local. Con su enfoque en ingredientes frescos y recetas caseras, el restaurante atrajo a una creciente base de clientes que buscaban una experiencia culinaria auténtica y reconfortante. Martín y Elena se esforzaron por mantener la calidad y la consistencia en cada plato, ganándose la lealtad de sus comensales.'];
+    var indice = 0;
 
+    function cambiarTexto() {
+        var div = document.getElementById("cambio");
+        div.innerHTML = fechas[indice].replace("\n","<br>")
+        indice = (indice + 1) % fechas.length;
+    }
+</script>
 </html>
