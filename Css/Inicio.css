@@ -21,7 +21,7 @@
   left: 50%; /* posiciona el texto en el centro horizontal */
   transform: translate(-50%, -50%); /* centra el texto */
   text-align: center; /* centra el texto horizontalmente */
-  padding-bottom: 800px;
+  padding-bottom: 710px;
   padding-left: 70px;
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
