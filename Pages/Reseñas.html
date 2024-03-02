@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +11,39 @@
     crossorigin="anonymous"></script>
 
     <title>Reseñas</title>
-    <link rel="icon" type="image/x-icon" href="../Img/logo.jpg">
-    <link rel="stylesheet" href="../Css/barra.css">
-    <link rel="stylesheet" href="../Css/Reseñas.css">
+
+<link rel="icon" type="image/x-icon" href="../Img/logo.jpg">
+<link rel="stylesheet" href="../Css/barra.css">
+<style>
+    .comentario {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .comentario img {
+        max-width: 100px;
+        max-height: 100px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+    .comentario p {
+        margin: 0;
+    }
+    .btn-custom {
+        background-color: #FFA500; 
+        border-color: #FFA500; 
+        color: #fff; 
+    }
+    .btn-custom:hover {
+        background-color: #FF8C00; 
+        border-color: #FF8C00; 
+    }
+</style>
 </head>
 
 <body>
+
     <div class="menu">
         <ion-icon name="menu-outline"></ion-icon>
         <ion-icon name="close-outline"></ion-icon>
@@ -27,21 +54,21 @@
             <div class="nombre-pagina">
                 <div class="usuario">
                     <img src="../Img/logo.jpg" alt="">
-                    <span class="usuario1">La Cazuela</span>
+                    <span>La Cazuela</span>
                 </div>
             </div>
-            <a href="../Inicio.html#platito">
-                <button class="boton">
-                    <ion-icon name="disc-outline"></ion-icon>
-                    <span>Plato del día</span>
-                </button>
-            </a>
+
+            <button class="boton">
+                <ion-icon name="disc-outline"></ion-icon>
+                <span>Plato del dia</span>
+            </button>
+
         </div>
 
         <nav class="navegacion">
             <ul>
                 <li>
-                    <a href="../Inicio.html">
+                    <a  href="../Inicio.html">
                         <ion-icon name="home-outline"></ion-icon>
                         <span>Inicio</span>
                     </a>
@@ -86,7 +113,7 @@
             <div class="info-usuario">
                 <div class="nombre-email">
                     <span class="nombre">Jorge Orantes</span>
-                    <span class="email">20200054@gmail.com</span>
+                    <span class="email">20200054@ricaldone.edu.sv</span>
                 </div>
                 <ion-icon name="ellipsis-vertical-outline"></ion-icon>
             </div>
@@ -96,6 +123,8 @@
     </div>
 
 
+
+    
     <main>
         <div class="container">
             <div class="row">
@@ -118,6 +147,7 @@
                             <label for="imagen" class="form-label">Imagen:</label>
                             <input type="file" class="form-control" id="imagen">
                         </div>
+                        
                         <button type="submit" class="btn btn-custom">Enviar reseña</button>
 
 
@@ -125,6 +155,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -190,16 +221,9 @@
                 `;
     
                 comentariosContainer.insertAdjacentHTML('beforeend', nuevoComentario);
-
-
-                document.getElementById('nombre').value = '';
-                document.getElementById('comentario').value = '';
-            });
+            }
         });
     </script>
-
     
-
 </body>
-
 </html>
