@@ -12,24 +12,7 @@
     <title>Reseñas</title>
     <link rel="icon" type="image/x-icon" href="../Img/logo.jpg">
     <link rel="stylesheet" href="../Css/barra.css">
-    <style>
-        .comentario {
-            margin-bottom: 20px;
-        }
-
-        .comentario .nombre {
-            font-weight: bold;
-        }
-
-        .comentario .fecha {
-            font-style: italic;
-            font-size: 0.8em;
-        }
-
-        .comentario .texto {
-            margin-top: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="../Css/Reseñas.css">
 </head>
 
 <body>
@@ -43,19 +26,21 @@
             <div class="nombre-pagina">
                 <div class="usuario">
                     <img src="../Img/logo.jpg" alt="">
-                    <span>La Cazuela</span>
+                    <span class="usuario1">La Cazuela</span>
                 </div>
             </div>
-            <button class="boton">
-                <ion-icon name="disc-outline"></ion-icon>
-                <span>Plato del dia</span>
-            </button>
+            <a href="../Inicio.html#platito">
+                <button class="boton">
+                    <ion-icon name="disc-outline"></ion-icon>
+                    <span>Plato del día</span>
+                </button>
+            </a>
         </div>
 
         <nav class="navegacion">
             <ul>
                 <li>
-                    <a  href="../Inicio.html">
+                    <a href="../Inicio.html">
                         <ion-icon name="home-outline"></ion-icon>
                         <span>Inicio</span>
                     </a>
@@ -93,7 +78,7 @@
             <div class="info-usuario">
                 <div class="nombre-email">
                     <span class="nombre">Jorge Orantes</span>
-                    <span class="email">20200054@ricaldone.edu.sv</span>
+                    <span class="email">20200054@gmail.com</span>
                 </div>
                 <ion-icon name="ellipsis-vertical-outline"></ion-icon>
             </div>
@@ -101,7 +86,7 @@
     </div>
 
     </div>
-    
+
 
     <main>
         <div class="container mt-5">
@@ -149,7 +134,7 @@
 
                 comentariosContainer.insertAdjacentHTML('beforeend', nuevoComentario);
 
-                
+
                 document.getElementById('nombre').value = '';
                 document.getElementById('comentario').value = '';
             });

@@ -1,0 +1,23 @@
+.comentario {
+    margin-bottom: 20px;
+}
+
+.comentario .nombre {
+    font-weight: bold;
+}
+
+.comentario .fecha {
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.comentario .texto {
+    margin-top: 5px;
+}
+
+a {
+    text-decoration: none;
+    /* Quita el subrayado */
+    color: inherit;
+    /* Mantiene el color original del texto */
+}
