@@ -3,4 +3,16 @@ a {
     /* Quita el subrayado */
     color: inherit;
     /* Mantiene el color original del texto */
+
+    html{
+        font-family: system-ui;
+    }
+    body{
+        margin: 3rem 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
