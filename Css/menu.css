@@ -3,7 +3,7 @@ a {
     /* Quita el subrayado */
     color: inherit;
     /* Mantiene el color original del texto */
-
+    
     html{
         font-family: system-ui;
     }
@@ -14,5 +14,14 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
+    }  
+    .column-4{
+        display: grid;
+        grid-template-columns: repeat(4,1fr) ;
+        column-gap: 1rem;
+        row-gap: 1rem;
     }
+   
 }
+
+
