@@ -91,3 +91,35 @@ a {
 .columnatext{
  align-self: center;
 }
+
+@media screen and (max-width: 768px) {
+  .info2 {
+    font-size: 40px;
+  }
+  
+  .texto1 {
+    font-size: 30px;
+  }
+  
+  .texto22 {
+    font-size: 25px;
+  }
+}
+.mision, .vision {
+  flex: 1;
+  padding: 20px;
+  background-color: #FFD700; /* Color dorado */
+  border-radius: 10px;
+}
+.footer {
+  background-color: #ff8552;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.redes-sociales img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
