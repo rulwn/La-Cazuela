@@ -21,7 +21,7 @@
   left: 50%; /* posiciona el texto en el centro horizontal */
   transform: translate(-50%, -50%); /* centra el texto */
   text-align: center; /* centra el texto horizontalmente */
-  padding-bottom: 800px;
+  padding-bottom: 710px;
   padding-left: 70px;
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
@@ -65,7 +65,7 @@
   padding-top: 5%;
   padding-bottom: 5%;
   padding-right: 5%;
-  border: 1px solid #E2E2E2;
+  border: 1px #000000;
   border-radius: 1.25rem;
   background-color: #ffca90;
   position: relative;
@@ -90,4 +90,36 @@ a {
 }
 .columnatext{
  align-self: center;
+}
+
+@media screen and (max-width: 768px) {
+  .info2 {
+    font-size: 40px;
+  }
+  
+  .texto1 {
+    font-size: 30px;
+  }
+  
+  .texto22 {
+    font-size: 25px;
+  }
+}
+.mision, .vision {
+  flex: 1;
+  padding: 20px;
+  background-color: #FFD700; /* Color dorado */
+  border-radius: 10px;
+}
+.footer {
+  background-color: #ff8552;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.redes-sociales img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
 }
