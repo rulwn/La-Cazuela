@@ -127,12 +127,7 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <div id="comentarios-container">
-                        
-                    </div>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-4"> <!-- Cambio aquí: Muevo el formulario de comentarios al lado izquierdo -->
                     <form id="formulario-comentario">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
@@ -146,15 +141,14 @@
                             <label for="imagen" class="form-label">Imagen:</label>
                             <input type="file" class="form-control" id="imagen">
                         </div>
-                        
                         <button type="submit" class="btn btn-custom">Enviar reseña</button>
-
-
                     </form>
+                </div>
+                <div class="col-md-8">
+                    <div id="comentarios-container"></div>
                 </div>
             </div>
         </div>
-
     </main>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
