@@ -95,7 +95,7 @@
     </div>
     <main>
         <div class="container text-center">
-            <img src="../Img/plato blanco (1).png"alt="">
+            <img src="../Img/plato blanco (1).png" alt="">
         </div>
         <div id="cosablanca" class="container text-center justify-content-center align-items-center pt-1 pb-1">
             <div class="container text-center">
@@ -146,11 +146,13 @@
             <br>
         </div>
         <div class="footer">
-        <div class="redes-sociales">
-            <a href="https://www.facebook.com/LaCazuelaSV/?locale=es_LA" target="_blank"><img src="../Img/facebook.png" alt="Facebook"></a>
-            <a href="https://api.whatsapp.com/send?phone=%2B50375063932&data=ARCDwZD11ZMT9lH29egoDDxv-zlatZOEk9wp5Um_28C7Z20uANvdb_snDctPb9qIwOArV-hO9YhV_z9RqQsYpye9nr_sZfO4cx1RgJyM2CfZv0CD5A47KMsHPCEGExzxSpAbtbYuSVcLo42dzOrj6SOWHg&source=FB_Page&app=facebook&entry_point=page_cta" target="_blank"><img src="../Img/whatsapp.png" alt="Whatsapp"></a>
-            
-        </div>
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/LaCazuelaSV/?locale=es_LA" target="_blank"><img
+                        src="../Img/facebook.png" alt="Facebook"></a>
+                <a href="https://api.whatsapp.com/send?phone=%2B50375063932&data=ARCDwZD11ZMT9lH29egoDDxv-zlatZOEk9wp5Um_28C7Z20uANvdb_snDctPb9qIwOArV-hO9YhV_z9RqQsYpye9nr_sZfO4cx1RgJyM2CfZv0CD5A47KMsHPCEGExzxSpAbtbYuSVcLo42dzOrj6SOWHg&source=FB_Page&app=facebook&entry_point=page_cta"
+                    target="_blank"><img src="../Img/whatsapp.png" alt="Whatsapp"></a>
+
+            </div>
         </div>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -163,12 +165,11 @@
     var currentIndex = 0;
 
     function cambiarTexto() {
-        document.getElementById("Djobi").innerText = fechas[currentIndex]; // Actualiza el texto
-        document.getElementById("Djoba").innerText = textos[currentIndex]; // Actualiza el texto
-        currentIndex = (currentIndex + 1) % fechas.length; // Avanza al siguiente índice (circular)
+        document.getElementById("Djobi").innerText = fechas[currentIndex];
+        document.getElementById("Djoba").innerText = textos[currentIndex];
+        currentIndex = (currentIndex + 1) % fechas.length;
     }
 
-    // Llama a la función cambiarTexto() al cargar la página
     window.onload = function () {
         cambiarTexto();
     };

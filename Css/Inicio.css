@@ -54,6 +54,10 @@
 .imagen1{
   width: 550px;
 }
+
+#Djobe{
+  width: 550px;
+}
 .cont1{
   display: flex ;
   justify-content: center;
