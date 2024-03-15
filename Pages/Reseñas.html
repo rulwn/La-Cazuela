@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <title>Reseñas</title>
 
-<link rel="icon" type="image/x-icon" href="../Img/logo.jpg">
-<link rel="stylesheet" href="../Css/barra.css">
-<style>
-    .comentario {
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 10px;
-        margin-bottom: 10px;
-        position: relative;
-    }
-    .comentario img {
-        max-width: 100px;
-        max-height: 100px;
-        margin-right: 10px;
-        border-radius: 50%;
-    }
-    .comentario p {
-        margin: 0;
-    }
-    .btn-custom {
-        background-color: #FFA500; 
-        border-color: #FFA500; 
-        color: #fff; 
-    }
-    .btn-custom:hover {
-        background-color: #FF8C00; 
-        border-color: #FF8C00; 
-    }
-    .eliminar-comentario {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        cursor: pointer;
-    }
-</style>
+    <link rel="icon" type="image/x-icon" href="../Img/logo.jpg">
+    <link rel="stylesheet" href="../Css/barra.css">
+    <style>
+        .comentario {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .comentario img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .comentario p {
+            margin: 0;
+        }
+
+        .btn-custom {
+            background-color: #FFA500;
+            border-color: #FFA500;
+            color: #fff;
+        }
+
+        .btn-custom:hover {
+            background-color: #FF8C00;
+            border-color: #FF8C00;
+        }
+
+        .eliminar-comentario {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -75,7 +80,7 @@
         <nav class="navegacion">
             <ul>
                 <li>
-                    <a  href="../Inicio.html">
+                    <a href="../Inicio.html">
                         <ion-icon name="home-outline"></ion-icon>
                         <span>Inicio</span>
                     </a>
@@ -115,26 +120,23 @@
                     <a href="Login.html">Cerrar sesión</a>
                 </div>
             </div>
-        <div class="usuario">
-            <img src="../Img/logo.jpg" alt="">
-            <div class="info-usuario">
-                <div class="nombre-email">
-                    <span class="nombre">Jorge Orantes</span>
-                    <span class="email">20200054@ricaldone.edu.sv</span>
+            <div class="usuario">
+                <img src="../Img/logo.jpg" alt="">
+                <div class="info-usuario">
+                    <div class="nombre-email">
+                        <span class="nombre">Jorge Orantes</span>
+                        <span class="email">20200054@ricaldone.edu.sv</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     </div>
 
-
-
-    
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-4"> 
+                <div class="col-md-4">
                     <form id="formulario-comentario">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
@@ -144,7 +146,7 @@
                             <label for="comentario" class="form-label">Comentario:</label>
                             <textarea class="form-control" id="comentario" rows="3" required></textarea>
                         </div>
-                       
+
                         <button type="submit" class="btn btn-custom">Enviar reseña</button>
                     </form>
                 </div>
@@ -163,69 +165,74 @@
         document.addEventListener('DOMContentLoaded', function () {
             const formularioComentario = document.getElementById('formulario-comentario');
             const comentariosContainer = document.getElementById('comentarios-container');
-    
-          
+
+
             cargarReseñas();
-    
+
             formularioComentario.addEventListener('submit', function (event) {
                 event.preventDefault();
-    
+
                 const nombre = document.getElementById('nombre').value;
                 const comentario = document.getElementById('comentario').value;
                 const fecha = new Date().toLocaleDateString();
-                
+
                 const imagenData = '../Img/logo.jpg';
-    
+
                 guardarReseña(nombre, fecha, comentario);
                 mostrarComentario(nombre, fecha, comentario);
-    
+
                 document.getElementById('nombre').value = '';
                 document.getElementById('comentario').value = '';
             });
-    
+
             function guardarReseña(nombre, fecha, comentario) {
                 let reseñas = JSON.parse(localStorage.getItem('reseñas')) || [];
                 reseñas.push({ nombre, fecha, comentario });
                 localStorage.setItem('reseñas', JSON.stringify(reseñas));
             }
-    
+
             function cargarReseñas() {
                 let reseñas = JSON.parse(localStorage.getItem('reseñas')) || [];
                 reseñas.forEach(function (res) {
-                    mostrarComentario(res.nombre, res.fecha, res.comentario); 
+                    mostrarComentario(res.nombre, res.fecha, res.comentario);
                 });
             }
-    
-            function mostrarComentario(nombre, fecha, comentario) { 
+
+            function mostrarComentario(nombre, fecha, comentario) {
                 const nuevoComentario = `
-                    <div class="comentario">
-                        <img src="../Img/logo.jpg" alt="Imagen de perfil"> 
-                        <div class="nombre">${nombre}</div>
-                        <div class="fecha">${fecha}</div>
-                        <div class="texto">${comentario}</div>
-                        <ion-icon name="trash-outline" class="eliminar-comentario" data-index="${index}"></ion-icon>
-                    </div>
+                <div class="comentario">
+        <div class="row">
+            <div class="col-2">
+                <img src="../Img/logo.jpg" alt="Imagen de perfil">
+            </div>
+            <div class="col">
+                <div class="nombre">${nombre}</div>
+        <div class="fecha">${fecha}</div>
+        <div class="texto">${comentario}</div>
+        <ion-icon name="trash-outline" class="eliminar-comentario"></ion-icon>
+            </div>
+        </div>
+    </div>
                 `;
-    
+
                 comentariosContainer.insertAdjacentHTML('beforeend', nuevoComentario);
             }
-    
-          
-            comentariosContainer.addEventListener('click', function(event) {
+
+
+            comentariosContainer.addEventListener('click', function (event) {
                 if (event.target.classList.contains('eliminar-comentario')) {
                     eliminarComentario(event);
                 }
             });
-    
+
             function eliminarComentario(event) {
                 const comentario = event.target.closest('.comentario');
                 comentario.remove();
-                
+
             }
         });
     </script>
-    
+
 </body>
+
 </html>
-
-
