@@ -21,3 +21,8 @@ a {
     color: inherit;
     /* Mantiene el color original del texto */
 }
+a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Mantiene el color original del texto */
+  }
+  
