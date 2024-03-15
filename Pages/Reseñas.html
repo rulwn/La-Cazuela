@@ -40,6 +40,12 @@
         background-color: #FF8C00; 
         border-color: #FF8C00; 
     }
+    .eliminar-comentario {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
 </style>
 </head>
 
@@ -128,7 +134,7 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-4"> <!-- Cambio aquí: Muevo el formulario de comentarios al lado izquierdo -->
+                <div class="col-md-4"> 
                     <form id="formulario-comentario">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
@@ -138,10 +144,7 @@
                             <label for="comentario" class="form-label">Comentario:</label>
                             <textarea class="form-control" id="comentario" rows="3" required></textarea>
                         </div>
-                        <div class="mb-3">
-                            <label for="imagen" class="form-label">Imagen:</label>
-                            <input type="file" class="form-control" id="imagen">
-                        </div>
+                       
                         <button type="submit" class="btn btn-custom">Enviar reseña</button>
                     </form>
                 </div>
@@ -170,48 +173,37 @@
                 const nombre = document.getElementById('nombre').value;
                 const comentario = document.getElementById('comentario').value;
                 const fecha = new Date().toLocaleDateString();
-                let imagenData = '';
+                
+                const imagenData = '../Img/logo.jpg';
     
-                const imagen = document.getElementById('imagen').files[0];
-                if (imagen) {
-                    const reader = new FileReader();
-                    reader.readAsDataURL(imagen);
-                    reader.onload = function () {
-                        imagenData = reader.result;
-                        guardarReseña(nombre, fecha, comentario, imagenData);
-                        mostrarComentario(nombre, fecha, comentario, imagenData);
-                    };
-                } else {
-                    guardarReseña(nombre, fecha, comentario, imagenData);
-                    mostrarComentario(nombre, fecha, comentario, imagenData);
-                }
+                guardarReseña(nombre, fecha, comentario);
+                mostrarComentario(nombre, fecha, comentario);
     
                 document.getElementById('nombre').value = '';
                 document.getElementById('comentario').value = '';
-                document.getElementById('imagen').value = '';
             });
     
-            function guardarReseña(nombre, fecha, comentario, imagenData) {
+            function guardarReseña(nombre, fecha, comentario) {
                 let reseñas = JSON.parse(localStorage.getItem('reseñas')) || [];
-                reseñas.push({ nombre, fecha, comentario, imagenData });
+                reseñas.push({ nombre, fecha, comentario });
                 localStorage.setItem('reseñas', JSON.stringify(reseñas));
             }
     
             function cargarReseñas() {
                 let reseñas = JSON.parse(localStorage.getItem('reseñas')) || [];
-                reseñas.forEach(function (res, index) {
-                    mostrarComentario(res.nombre, res.fecha, res.comentario, res.imagenData, index); 
+                reseñas.forEach(function (res) {
+                    mostrarComentario(res.nombre, res.fecha, res.comentario); 
                 });
             }
     
-            function mostrarComentario(nombre, fecha, comentario, imagenData, index) { 
+            function mostrarComentario(nombre, fecha, comentario) { 
                 const nuevoComentario = `
                     <div class="comentario">
-                        ${imagenData ? `<img src="${imagenData}" alt="Imagen de perfil">` : ''}
+                        <img src="../Img/logo.jpg" alt="Imagen de perfil"> <!-- Imagen de perfil fija -->
                         <div class="nombre">${nombre}</div>
                         <div class="fecha">${fecha}</div>
                         <div class="texto">${comentario}</div>
-                        <button class="eliminar-comentario" data-index="${index}">Eliminar</button> <!-- Se añade el atributo data-index -->
+                        <ion-icon name="trash-outline" class="eliminar-comentario"></ion-icon>
                     </div>
                 `;
     
@@ -226,15 +218,14 @@
             });
     
             function eliminarComentario(event) {
-                const index = event.target.dataset.index;
-                let reseñas = JSON.parse(localStorage.getItem('reseñas')) || [];
-                reseñas.splice(index, 1);
-                localStorage.setItem('reseñas', JSON.stringify(reseñas));
-                event.target.parentNode.remove();
+                const comentario = event.target.closest('.comentario');
+                comentario.remove();
+                
             }
         });
     </script>
     
 </body>
 </html>
+
 
