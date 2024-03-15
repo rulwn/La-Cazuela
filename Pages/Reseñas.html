@@ -20,6 +20,7 @@
         border-radius: 10px;
         padding: 10px;
         margin-bottom: 10px;
+        position: relative;
     }
     .comentario img {
         max-width: 100px;
@@ -127,8 +128,13 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-4"> <!-- Cambio aquí: Muevo el formulario de comentarios al lado izquierdo -->
-                    <form id="formulario-comentario">
+                <div class="col-md-8">
+                    <div id="comentarios-container">
+                        
+                    </div>
+                </div>
+                <div class="col-md-8"> <!-- Cambiado de col-md-4 a col-md-8 -->
+                    <form id="formulario-comentario" class="ms-md-auto">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
                             <input type="text" class="form-control" id="nombre" required>
@@ -141,14 +147,15 @@
                             <label for="imagen" class="form-label">Imagen:</label>
                             <input type="file" class="form-control" id="imagen">
                         </div>
+                        
                         <button type="submit" class="btn btn-custom">Enviar reseña</button>
+
+
                     </form>
-                </div>
-                <div class="col-md-8">
-                    <div id="comentarios-container"></div>
                 </div>
             </div>
         </div>
+
     </main>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -198,25 +205,42 @@
     
             function cargarReseñas() {
                 let reseñas = JSON.parse(localStorage.getItem('reseñas')) || [];
-                reseñas.forEach(function (res) {
-                    mostrarComentario(res.nombre, res.fecha, res.comentario, res.imagenData);
+                reseñas.forEach(function (res, index) {
+                    mostrarComentario(res.nombre, res.fecha, res.comentario, res.imagenData, index); 
                 });
             }
     
-            function mostrarComentario(nombre, fecha, comentario, imagenData) {
+            function mostrarComentario(nombre, fecha, comentario, imagenData, index) { 
                 const nuevoComentario = `
                     <div class="comentario">
                         ${imagenData ? `<img src="${imagenData}" alt="Imagen de perfil">` : ''}
                         <div class="nombre">${nombre}</div>
                         <div class="fecha">${fecha}</div>
                         <div class="texto">${comentario}</div>
+                        <button class="eliminar-comentario" data-index="${index}">Eliminar</button> <!-- Se añade el atributo data-index -->
                     </div>
                 `;
     
                 comentariosContainer.insertAdjacentHTML('beforeend', nuevoComentario);
+            }
+    
+          
+            comentariosContainer.addEventListener('click', function(event) {
+                if (event.target.classList.contains('eliminar-comentario')) {
+                    eliminarComentario(event);
+                }
+            });
+    
+            function eliminarComentario(event) {
+                const index = event.target.dataset.index;
+                let reseñas = JSON.parse(localStorage.getItem('reseñas')) || [];
+                reseñas.splice(index, 1);
+                localStorage.setItem('reseñas', JSON.stringify(reseñas));
+                event.target.parentNode.remove();
             }
         });
     </script>
     
 </body>
 </html>
+
