@@ -19,13 +19,15 @@ body {
 
 .banner{
     min-height: 100vh;
-    background: rgb(255, 202, 144) center/cover no-repeat;
     display: flex;
     flex-direction:column;
     justify-content:center;
     align-items: center;
     color:black;
     padding-bottom:20px;
+}
+main{
+    background: rgb(255, 202, 144) center/cover no-repeat;
 }
 
 .card-contenedor {
