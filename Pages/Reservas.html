@@ -6,12 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
     <title>Reservas</title>
     <link rel="icon" type="image/x-icon" href="../Img/logo.jpg">
-    <link rel="stylesheet" href="../Css/ReservasPage.css">
     <link rel="stylesheet" href="../Css/barra.css">
     <link rel="stylesheet" href="../Css/Reservas.css">
 </head>
@@ -95,95 +91,60 @@
     <main>
         <section class="banner">
             <h2>RESERVA TU PLATILLO</h2>
-                <div class = "card-contenedor">
-                    <div>
-                        <div id="carouselExampleCaptions" class="carousel slide">
-                            <div class="carousel-indicators">
-                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                <img src="../Img/cazuela_de_vacuno.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                  <h5>Cazuela de Vacuno</h5>
-                                  <p>Elige esta opción</p>
-                                </div>
-                              </div>
-                              <div class="carousel-item">
-                                <img src="../Img/merluza-a-la-cazuela.jpg" class="d-block w-100">
-                                <div class="carousel-caption d-none d-md-block">
-                                  <h5>Merluza a la Cazuela</h5>
-                                  <p>Elige esta opción</p>
-                                </div>
-                              </div>
-                              <div class="carousel-item">
-                                <img src="../Img/sopa-de-pollo-thermomix.jpg" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                  <h5>Sopa de pollo</h5>
-                                  <p>Elige esta opción</p>
-                                </div>
-                              </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
-                            </button>
-                          </div>
+            <div class="container-img">
+                <img id="imgs">
+            </div>
+                    
+            <div class="card-contenido">
+                <h3 id="platos">...</h3>
+                <form id="reservar-plato">
+                    <div class="form-row">
+                        <input  class="form-control" type="text" placeholder="Nombre para retirar" id="nombre" name="nombre" required>
                     </div>
-                    <div class="card-contenido">
-                        <h3>Seleccione su platillo</h3>
-                        <form id="reservar-mesa">
-                            <div class="form-row">
-                               <select name="dias">
-                                    <option value="dia-seleccionar">Seleccionar dia</option>
-                                    <option value="domingo">Domingo</option>
-                                    <option value="lunes">Lunes</option>
-                                    <option value="martes">Martes</option>
-                                    <option value="miercoles">Miercoles</option>
-                                    <option value="jueves">Jueves</option>
-                                    <option value="viernes">Viernes</option>
-                                    <option value="sabado">Sábado</option>
-                                </select> 
-
-                                <select name="horario">
-                                    <option value="hora-seleccionar">Seleccionar hora</option>
-                                    <option value="10">06:00</option>
-                                    <option value="12">08:00</option>
-                                    <option value="14">10:00</option>
-                                    <option value="16">12:00</option>
-                                    <option value="18">2:00</option>
-                                    <option value="20">4:00</option>
-                                    <option value="22">6:00</option>
-                                </select>
-                            </div>
-    
-                            <div class="form-row">
-                                <input type="text" placeholder="Nombre completo" id="nombre" name="nombre">
-                                <input type="text" placeholder="Telefono" id="telefono" name="telefono">
-                            </div>
-    
-                            <div class="form-row">
-                                <input type="number" placeholder="Cantidad" id="personas" name="personas" min="1" max="10">
-                                <input type="submit" value="RESERVAR PLATO">
-                            </div>
-                        </form>
+                    <div class="form-row">
+                    <select class="form-control" id="metodo_pago" name="metodo_pago" onchange="mostrarIconoPago()" required>
+                        <option value="">Seleccionar método de pago</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                    </select>
+                    <div class="input-group-append">
+                        <img id="paymentIcon" src="../Img/fondo_png_vacio_by_juuliidev_d4x2xn5-fullview.png" alt="">
                     </div>
                 </div>
-                <div id="administraReservas" >
-                    <h2 id="administra">Listado de reservas</h2>
-                    <ul id="reservas" class="lista-citas"></ul>
-                </div>    
+                    <div class="form-row">
+                        <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]{4}-[0-9]{4}" placeholder="Teléfono" required>
+
+                        <select class="form-control" name="horario" id="horario" required>
+                            <option value="">Seleccionar hora</option>
+                            <option value="06">06:00</option>
+                            <option value="08">08:00</option>
+                            <option value="10">10:00</option>
+                            <option value="12">12:00</option>
+                            <option value="14">2:00</option>
+                            <option value="16">4:00</option>
+                            <option value="18">6:00</option>
+                            <option value="20">8:00</option>
+                        </select>              
+                    </div>
+
+                    <div class="form-row">
+                        <input type="submit" id="enviarReserva" class="form-control" value="RESERVAR PLATO" onclick="agregarUsuario()">
+                    </div>
+
+                </form>
+            </div>
+            <br>
+                    <h3>Listado de reservas</h3>
+                    <ul id="listaUsuarios" ></ul>           
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="Js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.0/sweetalert2.min.js"></script>
+    <script src="../Js/Reservas.js"></script>
 </body>
 
 </html>

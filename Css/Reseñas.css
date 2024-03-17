@@ -26,3 +26,34 @@ a {
     color: inherit; /* Mantiene el color original del texto */
   }
   
+  .comentario {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+      position: relative;
+  }
+  .comentario img {
+      max-width: 100px;
+      max-height: 100px;
+      margin-right: 10px;
+      border-radius: 50%;
+  }
+  .comentario p {
+      margin: 0;
+  }
+  .btn-custom {
+      background-color: #FFA500; 
+      border-color: #FFA500; 
+      color: #fff; 
+  }
+  .btn-custom:hover {
+      background-color: #FF8C00; 
+      border-color: #FF8C00; 
+  }
+  .eliminar-comentario {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+  }
